@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('Auth');
     }
 
     /**
@@ -24,8 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $usuarios = Http::get('https://aseguramiento-api.herokuapp.com/api/Users');
-        $usuariosArray = $usuarios->json();
-        return view('home',compact('usuariosArray'));
+
     }
 }

@@ -7,7 +7,11 @@
 <br>
 @stop
 
+
 @section('content')
+
+
+
 <form action="{{url ('/paciente') }}" method="post" enctype="multipart/form-data">
 
 @include('paciente.form')
@@ -22,5 +26,7 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+
+
+
 @stop

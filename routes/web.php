@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PacienteController;
-
+use App\Http\Controllers\LoginApi;
+use App\Http\Middleware\Authenticate;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +17,18 @@ use App\Http\Controllers\PacienteController;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
+// Route::get('/', function () {
+//     return view('auth.login');
+// });
+
+Route::get('/', function(){
+    return view('login.index');
 });
 
-Auth::routes();
+Route::post('login', [LoginApi::class, 'login']);
+Route::post('logout', [LoginApi::class, 'logout']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('paciente',PacienteController::class);

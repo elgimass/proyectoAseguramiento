@@ -10,9 +10,13 @@
 @section('content')
 <a class="btn btn-success" href="{{ url('paciente/create') }}"> Registrar paciente </a>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
 <table class="table table-responsive">
     <thead class="thead-light">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
       <tr>
         <th scope="col">#</th>
         <th scope="col">DPI</th>
@@ -62,11 +66,7 @@
         <th>
             <a href="{{ url('paciente/'.$usuario['id'].'/edit') }}" class="btn btn-primary">Editar</a>
 
-            <form action="{{ url('paciente/'.$usuario['id']) }}"  method="post">
-                @csrf
-            {{method_field('DELETE')}}
-            <input class="btn btn-danger" type="submit" onclick ="return confirm('¿Estas seguro de que quieres borrar?')"value="Borrar">
-        </form>
+
         </th>
 
 
@@ -97,6 +97,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 </tbody>
 </table>
+
+
+
 
 @stop
 
